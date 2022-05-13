@@ -4,6 +4,7 @@ class Gradient {
     this.ctx = this.cnv.getContext('2d');
 
     this.particlesNum = 7;
+    this.speed = .005
 
     this.setCanvasSize();
     this.createParticles();
@@ -24,12 +25,16 @@ class Gradient {
       this.particles.push(new Particle(this.w, this.h));
     }
   }
+  clearCanvas(){
+    this.ctx.clearRect(0, 0, this.w, this.h)
+  }
   drawParticles(){
     this.particles.forEach((ptc) => {
-      ptc.draw(this.ctx);
+      ptc.draw(this.ctx, this.speed);
     })
   }
   animationParticles(){
+    this.clearCanvas()
     this.drawParticles()
     window.requestAnimationFrame(() => this.animationParticles())
   }
@@ -42,8 +47,8 @@ class Particle{
     this.radius = 50;
     this.angle  = 0; 
   }
-  draw(ctx){
-    this.angle++
+  draw(ctx, speed){
+    this.angle += speed
     const x = this.x + Math.cos(this.angle) * 200;
     const y = this.y + Math.sin(this.angle) * 200;
 
