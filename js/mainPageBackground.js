@@ -3,6 +3,8 @@ class Gradient {
     this.cnv = document.querySelector('canvas');
     this.ctx = this.cnv.getContext('2d');
 
+    this.particlesNum = 7;
+
     this.setCanvasSize();
     this.createParticles();
     window.onresize = () => {
@@ -15,7 +17,16 @@ class Gradient {
     this.h = this.cnv.height = innerHeight;
   }
   createParticles(){
-    new Particle(this.w, this.h).draw(this.ctx);
+    this.particles = [];
+    for (let i = 0; i < this.particlesNum; i++) {   
+      this.particles.push(new Particle(this.w, this.h));
+      this.drawParticles()
+    }
+  }
+  drawParticles(){
+    this.particles.forEach((particle) => {
+      particle.draw(this.ctx);
+    })
   }
 }
 
