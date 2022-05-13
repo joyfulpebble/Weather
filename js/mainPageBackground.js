@@ -7,9 +7,11 @@ class Gradient {
 
     this.setCanvasSize();
     this.createParticles();
+    this.animationParticles()
     window.onresize = () => {
       this.setCanvasSize()
       this.createParticles()
+      this.animationParticles()
     }
   }
   setCanvasSize(){
@@ -20,13 +22,16 @@ class Gradient {
     this.particles = [];
     for (let i = 0; i < this.particlesNum; i++) {   
       this.particles.push(new Particle(this.w, this.h));
-      this.drawParticles()
     }
   }
   drawParticles(){
-    this.particles.forEach((particle) => {
-      particle.draw(this.ctx);
+    this.particles.forEach((ptc) => {
+      ptc.draw(this.ctx);
     })
+  }
+  animationParticles(){
+    this.drawParticles()
+    window.requestAnimationFrame(() => this.animationParticles())
   }
 }
 
@@ -35,10 +40,15 @@ class Particle{
     this.x = Math.random() * w;
     this.y = Math.random() * h; 
     this.radius = 50;
+    this.angle  = 0; 
   }
   draw(ctx){
+    this.angle++
+    const x = this.x + Math.cos(this.angle) * 200;
+    const y = this.y + Math.sin(this.angle) * 200;
+
     ctx.beginPath();
-    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    ctx.arc(x, y, this.radius, 0, Math.PI * 2);
     ctx.fill();
   }
 }
