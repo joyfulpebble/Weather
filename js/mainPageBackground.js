@@ -4,15 +4,17 @@ class Gradient {
     this.ctx = this.cnv.getContext('2d');
 
     this.particlesNum = 7;
-    this.speed = .005
+    this.speed = .005;
+    this.minRadius = 30;
+    this.maxRadius = 90;
 
     this.setCanvasSize();
     this.createParticles();
-    this.animationParticles()
+    this.animationParticles();
     window.onresize = () => {
-      this.setCanvasSize()
-      this.createParticles()
-      this.animationParticles()
+      this.setCanvasSize();
+      this.createParticles();
+      this.animationParticles();
     }
   }
   setCanvasSize(){
@@ -22,11 +24,11 @@ class Gradient {
   createParticles(){
     this.particles = [];
     for (let i = 0; i < this.particlesNum; i++) {   
-      this.particles.push(new Particle(this.w, this.h));
+      this.particles.push(new Particle(this.w, this.h, this.minRadius, this.maxRadius));
     }
   }
   clearCanvas(){
-    this.ctx.clearRect(0, 0, this.w, this.h)
+    this.ctx.clearRect(0, 0, this.w, this.h);
   }
   drawParticles(){
     this.particles.forEach((ptc) => {
@@ -34,18 +36,18 @@ class Gradient {
     })
   }
   animationParticles(){
-    this.clearCanvas()
-    this.drawParticles()
-    window.requestAnimationFrame(() => this.animationParticles())
+    this.clearCanvas();
+    this.drawParticles();
+    window.requestAnimationFrame(() => this.animationParticles());
   }
 }
 
 class Particle{
-  constructor(w, h){
+  constructor(w, h, minR, maxR){
     this.x = Math.random() * w;
     this.y = Math.random() * h; 
-    this.radius = 50;
-    this.angle  = 0; 
+    this.angle  = Math.random() * Math.PI * 2; 
+    this.radius = Math.random() * (maxR - minR) + minR;
   }
   draw(ctx, speed){
     this.angle += speed
