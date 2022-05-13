@@ -3,10 +3,10 @@ class Gradient {
     this.cnv = document.querySelector('canvas');
     this.ctx = this.cnv.getContext('2d');
 
-    this.particlesNum = 7;
+    this.particlesNum = 10;
     this.speed = .005;
-    this.minRadius = 30;
-    this.maxRadius = 90;
+    this.minRadius = 300;
+    this.maxRadius = 900;
 
     this.setCanvasSize();
     this.createParticles();
