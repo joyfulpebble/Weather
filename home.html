@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/homeStyle.css">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    ::-webkit-scrollbar{
+      display: none;
+    }
+    body{
+      padding: 0;
+      margin: 0;
+    }
+    canvas{
+      display: block;
+      background: #4e4e4e;
+      position: absolute;
+      z-index: -100;
+    }
+    h1 {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <canvas></canvas>
+  
+  <div class="root">
+    <div class="leftSide">
+      <div class="headlines">
+        <div class="headline"> <h1>Прогноз погоды ⛅</h1> </div>
+        <div class="secondaryHeader"> <p>Может и не самый точный :D</p> </div>
+      </div>
+      <div class="more"><a href="#">Прогноз на несколько дней</a></div>
+    </div>
+    <div class="rightSide">
+        <div class="app__container">
+        
+        <!-- <div class="lastUpdate"></div>
+          <button class="update__btn">Update!</button> -->
+        </div>
+      </div>
+  </div>
+
+  <script src="js/gettingAForecast.js"></script>
+  <script src="js/mainPageBackground.js"></script>
+</body>
+</html>
