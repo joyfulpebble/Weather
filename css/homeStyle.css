@@ -30,15 +30,93 @@ a {
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
   border: 1px solid rgb(88, 87, 87);
-  background: rgb(180, 187, 180);
-  color: white;
+  background: rgb(252, 229, 159);
+  color: black;
   padding: 9px;
   border-radius: 10px;
-  opacity: 60%;
+  opacity: 70%;
 }
 a:hover{
   opacity: 90%;
 }
 .leftSide{
   margin-top: 134px;
+}
+.app__container{
+  width: 286px;
+  height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  border-radius: 20px;
+  border: 3px solid rgb(185, 184, 184);
+  padding: 20px;
+  background-color: rgb(247, 229, 229);
+  opacity: 80%; 
+}
+.app{
+  user-select: none;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 3px solid rgb(223, 222, 222);
+  border-radius: 20px;
+  padding: 5px;
+}
+.top{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* text-align: center; */
+}
+.temp{
+  font-weight: 700;
+  font-size: 30px;
+}
+.wind{
+  margin-top: 10px;
+  font-weight: 200;
+  font-size: 16px;
+}
+.center{
+  margin-top: 10px;
+  font-weight: 200;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+.bottom{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.update{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.lastUpdate{
+  font-weight: 200;
+  font-size: 10px;
+  margin-top: 4px;
+  text-decoration: underline;
+}
+.update__btn{
+  margin-top: 33px;
+}
+.warning{
+  font-weight: 200;
+  font-size: 10px;
+  text-align: center;
+  text-decoration: underline;
+  margin-top: 10px;
 }
