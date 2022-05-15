@@ -9,33 +9,20 @@
 </head>
 <body>
   <style>
-    ::-webkit-scrollbar{
-      display: none;
-    }
-    body{
-      padding: 0;
-      margin: 0;
-    }
-    canvas{
-      display: block;
-      background: #4e4e4e;
-      position: absolute;
-      z-index: -100;
-    }
-    h1 {
-      margin: 0;
-      padding: 0;
-    }
+    ::-webkit-scrollbar{display: none;}body{padding: 0;margin: 0;}canvas{display: block;background: #4e4e4e;position: absolute;z-index: -100;}h1 {margin: 0;padding: 0;}
   </style>
   <canvas></canvas>
   
   <div class="root">
     <div class="leftSide">
       <div class="headlines">
-        <div class="headline"> <h1>Прогноз погоды ⛅</h1> </div>
-        <div class="secondaryHeader"> <p>Может и не самый точный :D</p> </div>
+        <div class="headline"> <h1>Прогноз погоды* ⛅</h1> </div>
+        <div class="secondaryHeader"> <p>*Может и не самый точный :D</p> </div>
       </div>
-      <div class="more"><a href="#">Прогноз на несколько дней</a></div>
+      <div class="src__btns">
+        <div class="more"> <a href="#">Прогноз на несколько дней</a> </div>
+        <div class="gitHub"> <a href="https://github.com/joyfulpebble/Weather">GitHub</a> </div>
+      </div>
     </div>
     <div class="rightSide">
         <div class="app__container">
