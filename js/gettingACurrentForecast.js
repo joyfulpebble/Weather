@@ -1,5 +1,5 @@
 const locationURL = 'https://api.bigdatacloud.net/data/reverse-geocode-client';
-
+var BigData;
 const getGeoCode = async () => {
   const response = await fetch(locationURL)
   const locationData = await response.json()
@@ -8,14 +8,15 @@ const getGeoCode = async () => {
 }
 getGeoCode()
 
-function drawForecastOnMainPAge(data) {
+function drawForecastOnMainPage(data) {
+  BigData = data;
   const $appContainer = document.querySelector('.app__container')
   var windToMps = data.current.wind_kph / 3.6;
   var windDir = data.current.wind_dir.slice(0,-1);
   const $app = 
     `
     <div class="app">
-    <p class="wetherNow">Прогноз погоды сейчас</p>
+    <p class="wetherNow">Прогноз погоды сейчас: </p>
       <div class="top">
         <div class="temp">${data.current.temp_c}°C</div>
         <div class="wind">
@@ -41,7 +42,8 @@ function drawForecastOnMainPAge(data) {
     `
       $appContainer.insertAdjacentHTML('beforeend', $app)
 
-  console.log(data);
+  // console.log(data);
+  return BigData
 }
 
 function getCoords(locationData) {
@@ -52,8 +54,8 @@ function getCoords(locationData) {
   const getForecast = async () => {
     const response = await fetch(weatherURL)
     const forecastData = await response.json()
-    // console.log(forecastData);
-    drawForecastOnMainPAge(forecastData)
+    console.log(drawForecastOnMainPage(forecastData));
+    // drawForecastOnMainPage(forecastData); 
   }
   getForecast()
 }
