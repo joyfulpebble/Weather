@@ -3,7 +3,7 @@ import {renderMiniApp} from "./modules/miniApp.js"
 function weather() {
   const locationURL = 'https://api.bigdatacloud.net/data/reverse-geocode-client';
   function getPosition(url) {
-    axios.get(locationURL).then(responce => {
+    axios.get(url).then(responce => {
       let latitude  = responce.data.latitude;
       let longitude = responce.data.longitude;
   
@@ -13,7 +13,7 @@ function weather() {
   function getForecast(latitude, longitude) {
     axios({
       method: 'GET',
-      url: `http://api.weatherapi.com/v1/forecast.jsondays=3&aqi=no&alerts=no`,
+      url: `http://api.weatherapi.com/v1/forecast.json`,
       params: {
         key: '3d3037618cbf4db4a01120151221005',
         q: `${latitude},${longitude}`,
