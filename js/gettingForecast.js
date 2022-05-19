@@ -1,3 +1,5 @@
+import {renderMiniApp} from "./modules/miniApp.js"
+
 function weather() {
   const locationURL = 'https://api.bigdatacloud.net/data/reverse-geocode-client';
   function getPosition(url) {
@@ -21,8 +23,10 @@ function weather() {
       }
     })
       .then(responce => {
-        
-        console.log(responce.data);
+        const allForecast = responce.data;
+          renderMiniApp(allForecast)
+
+        // console.log(allForecast);
       })
   }
   getPosition(locationURL)
