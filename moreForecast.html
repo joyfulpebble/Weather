@@ -19,22 +19,23 @@
     }
   </style>
 
-<main class="flex__centring">
-  <div class="header__line">
-    <div class="toMain__block">
-      <a href="main.html">
-        <img src="./img/logo.png" alt="" class="toMain__img">
-      </a>
+  <main class="flex__centring">
+    <div class="header__line">
+      <div class="toMain__block">
+        <a href="main.html">
+          <img src="./img/logo.png" alt="" class="toMain__img">
+        </a>
+      </div>
+      <div class="search__block">
+        <input type="text" class="search__bar" placeholder="Найти город..." value="Симферополь">
+      </div>
     </div>
-    <div class="search__block">
-      <input type="text" class="search__bar" placeholder="Найти город...">
+    <div class="forecast__block">
+
     </div>
-  </div>
-  <div class="forecast__block">
-
-  </div>
-</main>
-
-  <script src="./js/gettingForecast.js"></script>
+  </main>
+  
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="./js/getFullForecast.js"></script>
 </body>
 </html>
