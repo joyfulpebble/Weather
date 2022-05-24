@@ -1,12 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather Forecast</title>
-</head>
+  <link rel="stylesheet" href="./css/moreForecast.css">
+</head> 
 <body>
-  
+  <style>
+    ::-webkit-scrollbar{
+      display: none;
+    }
+    body{
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+
+<main class="flex__centring">
+  <div class="header__line">
+    <div class="toMain__block">
+      <a href="main.html">
+        <img src="./img/logo.png" alt="" class="toMain__img">
+      </a>
+    </div>
+    <div class="search__block">
+      <input type="text" class="search__bar" placeholder="Найти город...">
+    </div>
+  </div>
+  <div class="forecast__block">
+
+  </div>
+</main>
+
+  <script src="./js/gettingForecast.js"></script>
 </body>
 </html>

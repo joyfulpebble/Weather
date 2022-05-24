@@ -1,0 +1,25 @@
+.flex__centring{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__line{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 100%;
+  background-color: rgb(56, 53, 53);
+  display: flex;
+  align-items: center;
+}
+
+
+.forecast__block{
+  width: 1200px;
+  height: 450px;
+  background-color: white;
+  border: 2.4px solid #d0d7de;
+  border-radius: 6px;
+  margin-top: 120px;
+}
