@@ -20,7 +20,7 @@
   margin-left: 50px;
 }
 .search__bar{
-  margin-right: 50px;
+  margin-right: 15px;
   width: 250px;
   outline: none;
   box-shadow: none;
@@ -35,6 +35,24 @@
   border: 2px solid black;
   outline: none;
   box-shadow: none;
+}
+.serch__btn{
+  font-weight: 500;
+  background: rgb(252, 229, 159);
+  color: black;
+  padding: 9px;
+  border-radius: 10px;
+  opacity: 70%;
+  cursor: pointer;
+}
+.serch__btn:hover{
+  opacity: 90%;
+}
+.search__block{
+  margin-right: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .forecast__block{
   width: 1200px;
