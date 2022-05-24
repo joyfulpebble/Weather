@@ -11,10 +11,31 @@
   width: 100%;
   background-color: rgb(56, 53, 53);
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
 }
-
-
+.toMain__img{
+  width: 45px;
+  margin-left: 50px;
+}
+.search__bar{
+  margin-right: 50px;
+  width: 250px;
+  outline: none;
+  box-shadow: none;
+  border-radius: 5px;
+  padding: 10px 17px;
+  border: 2px solid rgb(255, 255, 255);
+  transition: border-color 0.15s ease-in-out;
+  font-weight: bold;
+  font-size: 15px;
+}
+.search__bar:focus{
+  border: 2px solid black;
+  outline: none;
+  box-shadow: none;
+}
 .forecast__block{
   width: 1200px;
   height: 450px;
