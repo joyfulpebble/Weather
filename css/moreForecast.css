@@ -36,7 +36,7 @@
   outline: none;
   box-shadow: none;
 }
-.serch__btn{
+.search__btn{
   font-weight: 500;
   background: rgb(252, 229, 159);
   color: black;
@@ -45,7 +45,7 @@
   opacity: 70%;
   cursor: pointer;
 }
-.serch__btn:hover{
+.search__btn:hover{
   opacity: 90%;
 }
 .search__block{
