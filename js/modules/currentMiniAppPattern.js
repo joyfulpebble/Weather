@@ -1,6 +1,6 @@
 export function renderMiniApp(data) {
   var windToMps = data.current.wind_kph / 3.6;
-  var windDir = data.current.wind_dir.slice(0,-1);
+  var windDir = data.current.wind_dir;
 
   const $appContainer = document.querySelector('.app__container');
   const $app = 
