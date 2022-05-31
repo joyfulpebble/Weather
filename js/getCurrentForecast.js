@@ -1,4 +1,4 @@
-import {renderMiniApp} from "./modules/miniApp.js"
+import {renderMiniApp} from "./modules/currentMiniAppPattern.js"
 
 function weather() {
   const locationURL = 'https://api.bigdatacloud.net/data/reverse-geocode-client';
