@@ -19,7 +19,7 @@ function currentWeather() {
   const locationURL = 'https://api.bigdatacloud.net/data/reverse-geocode-client';
   function getCurrentPosition(url) {
     axios.get(url).then(responce => {
-        let latitude  = responce.data.latitude;
+      let latitude  = responce.data.latitude;
       let longitude = responce.data.longitude;
   
       getForecast(latitude, longitude)   
