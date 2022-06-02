@@ -1,6 +1,22 @@
 export function renderFullForecast(data) {
-  var windToMps = data.current.wind_kph / 3.6;
-  var windDir = data.current.wind_dir;
+  let date = data.forecast.forecastday[0].date;
+  let datePatch = new Date(date.split('-').join(', '));
+  // let windToMps = data.current.wind_kph / 3.6;
+  // let windDir = data.forecast.forecastday[0].wind_dir;
+
+  function getWeekDay(date) {
+    let days = [
+      'Воскресенье', 
+      'Понедельник', 
+      'Вторник', 
+      'Среда', 
+      'Четверг', 
+      'Пятница', 
+      'Суббота'];
+  
+    return days[date.getDay()];
+  }
+  
 
   const $forecast__block = document.querySelector('.forecast__block');
   const $app = 
@@ -9,8 +25,8 @@ export function renderFullForecast(data) {
               <div class="current__forecast">
                 <div class="forecast__leftMenu">
                   <div class="leftMenu__dayInfo flex__centring">
-                    <h1></h1>
-                    <p></p>
+                    <h1>${getWeekDay(datePatch)}</h1>
+                    <p>${date}</p>
                     <br>
                     <div>картинка</div>
                     <br>
