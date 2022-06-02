@@ -15,8 +15,7 @@ export function renderMiniApp(data) {
         </div>
       </div>
       <div class="center">
-        <div class="icon"> <img src="${data.current.condition.icon} alt=":("> </div>
-        <div class="info">           ${data.current.condition.text}</div>
+        <div><img src="${data.current.condition.icon}" alt="No img :("></div>
       </div>
       <div class="bottom">
         <div class="fiilslike">Ощущается как: ${data.current.feelslike_c}</div>
@@ -25,9 +24,6 @@ export function renderMiniApp(data) {
       </div>
       <div class="update">
         <div class="lastUpdate">Последнее обновление: ${data.current.last_updated}</div>
-        <div class="update__btn"> <a href="#">Обновить!</a> </div>
-      </div>
-      <div class="warning">Обновлять данные о погоде стоит не чаще 1 раза в 5-10 минут!</div>
     </div>
     `;
 
