@@ -11,6 +11,10 @@ class Gradient {
     this.setCanvasSize();
     this.createParticles();
     this.animationParticles();
+
+    window.onresize = () =>{
+      this.setCanvasSize();
+    }
   }
   setCanvasSize(){
     this.w = this.cnv.width  = innerWidth;
@@ -62,4 +66,3 @@ class Particle{
 }
 
 window.onload   = () => new Gradient();
-window.onresize = () => new Gradient();
