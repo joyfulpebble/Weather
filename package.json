@@ -1,0 +1,25 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joyfulpebble/Weather.git"
+  },
+  "keywords": [
+    "node.js"
+  ],
+  "author": "joyfulpebble",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joyfulpebble/Weather/issues"
+  },
+  "homepage": "https://github.com/joyfulpebble/Weather",
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
+}
