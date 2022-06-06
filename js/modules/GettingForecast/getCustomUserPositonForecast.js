@@ -1,11 +1,11 @@
 export function weather(func, input) {
   // debugger
-  const forecast_block = document.querySelector('.forecast__block');
-  const coords_err_message = `<h4>Ошибка получения координат, поищите другой город или перезапустите страницу</h4>`;
-  const forecast_err_message = `<h4>Ошибка получения прогноза, поищите другой город или перезапустите страницу</h4>`;
+  const info_text = document.querySelector('.info_text');
+  const coords_err_message = `Ошибка получения координат, поищите другой город или перезапустите страницу(ниже прогноз по последнему городу)`;
+  const forecast_err_message = `Ошибка получения прогноза, поищите другой город или перезапустите страницу(ниже прогноз по последнему городу)`;
 
   function getCurrentPosition(func, input) {
-    axios({
+    axios({ 
       method: 'GET',
       url: `http://autocomplete.travelpayouts.com/places2`,
       params: {
@@ -21,17 +21,17 @@ export function weather(func, input) {
     })
     .catch(function (error) {
       if (error.response) {
-        forecast_block.innerHTML = coords_err_message
+        info_text.innerHTML = coords_err_message
         console.log(error.response.data);
         console.log(error.response.status);
       } else if (error.request) {
-        forecast_block.innerHTML = coords_err_message
+        info_text.innerHTML = coords_err_message
         console.log(error.request);
       } else {
-        forecast_block.innerHTML = coords_err_message
+        info_text.innerHTML = coords_err_message
         console.log('Error', error.message);
       }
-      forecast_block.innerHTML = coords_err_message
+      info_text.innerHTML = coords_err_message
       console.log(error.config);
     });
   }
@@ -54,17 +54,17 @@ export function weather(func, input) {
       })
       .catch(function (error) {
         if (error.response) {
-          forecast_block.innerHTML = forecast_err_message
+          info_text.innerHTML = forecast_err_message
           console.log(error.response.data);
           console.log(error.response.status);
         } else if (error.request) {
-          forecast_block.innerHTML = forecast_err_message
+          info_text.innerHTML = forecast_err_message
           console.log(error.request);
         } else {
-          forecast_block.innerHTML = forecast_err_message
+          info_text.innerHTML = forecast_err_message
           console.log('Error', error.message);
         }
-        forecast_block.innerHTML = forecast_err_message
+        info_text.innerHTML = forecast_err_message
       });
   }
   getCurrentPosition(func, input)
