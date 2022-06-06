@@ -17,6 +17,6 @@ const swiper = new Swiper('.swiper', {
 
 search_btn.onclick = () => {
   let input = document.querySelector('.search__bar').value;
-  info_text.innerHTML = `Прогноз на сегодня в городе: ${input}`;
+  info_text.innerHTML = `Прогноз в городе: ${input}`;
   weather(renderFullForecast, input);
 }
