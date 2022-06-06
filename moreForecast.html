@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather Forecast</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
   <link rel="stylesheet" href="./css/moreForecast.css">
   <link rel="icon" href="./img/logo.png" type="image/x-icon">
 </head> 
@@ -26,16 +27,25 @@
       </div>
     </div>
     <div class="forecast__block flex__centring">
-      <h4>
-        Прогноз на сегодня по вашему положению:
+      <h4 class="info_text">
+        Прогноз по вашему положению:
       </h4>
-      </div class="forecast">
-
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide one">  </div>
+          <br>
+          <div class="swiper-slide two">  </div>
+          <br>
+          <div class="swiper-slide three">  </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
     </div>
   </main>
   
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
   <script type="module" src="./js/moreForecast.js"></script>
 </body>
 </html>

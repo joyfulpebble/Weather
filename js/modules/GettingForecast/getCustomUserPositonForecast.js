@@ -1,5 +1,9 @@
 export function weather(func, input) {
-  const forecast_block = document.querySelector('.forecast__block')
+  // debugger
+  const forecast_block = document.querySelector('.forecast__block');
+  const coords_err_message = `<h4>Ошибка получения координат, поищите другой город или перезапустите страницу</h4>`;
+  const forecast_err_message = `<h4>Ошибка получения прогноза, поищите другой город или перезапустите страницу</h4>`;
+
   function getCurrentPosition(func, input) {
     axios({
       method: 'GET',
@@ -17,25 +21,17 @@ export function weather(func, input) {
     })
     .catch(function (error) {
       if (error.response) {
-        forecast_block.innerHTML = `
-        <h4>
-          Ошибка запроса, поищите другой город или перезапустите страницу
-        </h4>`;
+        forecast_block.innerHTML = coords_err_message
         console.log(error.response.data);
         console.log(error.response.status);
       } else if (error.request) {
+        forecast_block.innerHTML = coords_err_message
         console.log(error.request);
       } else {
-        forecast_block.innerHTML = `
-        <h4>
-          Ошибка запроса, поищите другой город или перезапустите страницу
-        </h4>`;
+        forecast_block.innerHTML = coords_err_message
         console.log('Error', error.message);
       }
-      forecast_block.innerHTML = `
-      <h4>
-        Ошибка запроса, поищите другой город или перезапустите страницу
-      </h4>`;
+      forecast_block.innerHTML = coords_err_message
       console.log(error.config);
     });
   }
@@ -58,30 +54,17 @@ export function weather(func, input) {
       })
       .catch(function (error) {
         if (error.response) {
-          forecast_block.innerHTML = `
-          <h4>
-            Ошибка запроса, поищите другой город или перезапустите страницу
-          </h4>`;
+          forecast_block.innerHTML = forecast_err_message
           console.log(error.response.data);
           console.log(error.response.status);
         } else if (error.request) {
-          forecast_block.innerHTML = `
-          <h4>
-            Ошибка запроса, поищите другой город или перезапустите страницу
-          </h4>`;
+          forecast_block.innerHTML = forecast_err_message
           console.log(error.request);
         } else {
-          forecast_block.innerHTML = `
-          <h4>
-            Ошибка запроса, поищите другой город или перезапустите страницу
-          </h4>`;
+          forecast_block.innerHTML = forecast_err_message
           console.log('Error', error.message);
         }
-        forecast_block.innerHTML = `
-        <h4>
-          Ошибка запроса, поищите другой город или перезапустите страницу
-        </h4>`;
-        console.log(error.config);
+        forecast_block.innerHTML = forecast_err_message
       });
   }
   getCurrentPosition(func, input)

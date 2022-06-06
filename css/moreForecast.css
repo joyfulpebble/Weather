@@ -1,4 +1,7 @@
-
+.swiper {
+  width: 1100px;
+  height: 400px;
+}
 .flex__centring{
   display: flex;
   justify-content: center;
@@ -65,7 +68,7 @@
   width: 1200px;
   height: 550px;
   background-color: white;
-  border: 2.4px solid #d0d7de;
+  /* border: 2.4px solid #d0d7de; */
   border-radius: 6px;
   margin-top: 120px;
   margin-bottom: 50px;
@@ -73,14 +76,14 @@
   justify-content: space-evenly;
 }
 .forecast{
-  height: 400px;
-  width: 1100px;
+  height: 390px;
+  width: 1090px;
   display: flex;
   flex-direction: row;
 }
 .forecast__rightMenu{
   padding: 50px 30px;
-  border: 2.4px solid #d0d7de;
+  /* border: 2.4px solid #d0d7de; */
   border-radius: 6px;
 }
 table{
@@ -93,14 +96,14 @@ td{
 }
 .forecast__leftMenu{
   width: 250px;
-  border: 2.4px solid #d0d7de;
+  /* border: 2.4px solid #d0d7de; */
   border-radius: 6px;
   margin-right: 20px;
 }
 .leftMenu__dayInfo{
   flex-direction: column;
   padding: 15px;
-  border-bottom: 2.4px solid #d0d7de;
+  /* border-bottom: 2.4px solid #d0d7de; */
 }
 .leftMenu__astroInfo{
   height: 185px;

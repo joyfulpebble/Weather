@@ -28,5 +28,4 @@ export function renderMiniApp(data) {
     `;
 
     $appContainer.insertAdjacentHTML('beforeend', $app);
-  return $app;
 }

@@ -1,99 +1,103 @@
 export function renderFullForecast(data) {
-  const partialDayProperties = {
-    day_of_the_week:  data.forecast.forecastday[0].date,
-    max_temp:         data.forecast.forecastday[0].day.maxtemp_c,
-    min_temp:         data.forecast.forecastday[0].day.mintemp_c,
-  }
-  const astroProperties = {
-    sun_rise:         data.forecast.forecastday[0].astro.sunrise,
-    sun_set:          data.forecast.forecastday[0].astro.sunset,
-    moon_rise:        data.forecast.forecastday[0].astro.moonrise,
-    moon_set:         data.forecast.forecastday[0].astro.moonset,
-    moon_phase:       data.forecast.forecastday[0].astro.moon_phase
-  }
-  const hourProperties = [
-    {
-      temp:           data.forecast.forecastday[0].hour[0].temp_c,
-      fiils_like:     data.forecast.forecastday[0].hour[0].feelslike_c,
-      wind:          (data.forecast.forecastday[0].hour[0].wind_kph / 3.6).toFixed(1),
-      wind_dir:       data.forecast.forecastday[0].hour[0].wind_dir,
-      humidity:       data.forecast.forecastday[0].hour[0].humidity,
-      chance_of_rain: data.forecast.forecastday[0].hour[0].chance_of_rain,
-    },
-    {
-      temp:           data.forecast.forecastday[0].hour[3].temp_c,
-      fiils_like:     data.forecast.forecastday[0].hour[3].feelslike_c,
-      wind:          (data.forecast.forecastday[0].hour[3].wind_kph / 3.6).toFixed(1),
-      wind_dir:       data.forecast.forecastday[0].hour[3].wind_dir,
-      humidity:       data.forecast.forecastday[0].hour[3].humidity,
-      chance_of_rain: data.forecast.forecastday[0].hour[3].chance_of_rain,
-    },
-    {
-      temp:           data.forecast.forecastday[0].hour[6].temp_c,
-      fiils_like:     data.forecast.forecastday[0].hour[6].feelslike_c,
-      wind:          (data.forecast.forecastday[0].hour[6].wind_kph / 3.6).toFixed(1),
-      wind_dir:       data.forecast.forecastday[0].hour[6].wind_dir,
-      humidity:       data.forecast.forecastday[0].hour[6].humidity,
-      chance_of_rain: data.forecast.forecastday[0].hour[6].chance_of_rain,
-    },
-    {
-      temp:           data.forecast.forecastday[0].hour[9].temp_c,
-      fiils_like:     data.forecast.forecastday[0].hour[9].feelslike_c,
-      wind:          (data.forecast.forecastday[0].hour[9].wind_kph / 3.6).toFixed(1),
-      wind_dir:       data.forecast.forecastday[0].hour[9].wind_dir,
-      humidity:       data.forecast.forecastday[0].hour[9].humidity,
-      chance_of_rain: data.forecast.forecastday[0].hour[9].chance_of_rain,
-    },
-    {
-      temp:           data.forecast.forecastday[0].hour[12].temp_c,
-      fiils_like:     data.forecast.forecastday[0].hour[12].feelslike_c,
-      wind:          (data.forecast.forecastday[0].hour[12].wind_kph / 3.6).toFixed(1),
-      wind_dir:       data.forecast.forecastday[0].hour[12].wind_dir,
-      humidity:       data.forecast.forecastday[0].hour[12].humidity,
-      chance_of_rain: data.forecast.forecastday[0].hour[12].chance_of_rain,
-    },
-    {
-      temp:           data.forecast.forecastday[0].hour[15].temp_c,
-      fiils_like:     data.forecast.forecastday[0].hour[15].feelslike_c,
-      wind:          (data.forecast.forecastday[0].hour[15].wind_kph / 3.6).toFixed(1),
-      wind_dir:       data.forecast.forecastday[0].hour[15].wind_dir,
-      humidity:       data.forecast.forecastday[0].hour[15].humidity,
-      chance_of_rain: data.forecast.forecastday[0].hour[15].chance_of_rain,
-    },
-    {
-      temp:           data.forecast.forecastday[0].hour[18].temp_c,
-      fiils_like:     data.forecast.forecastday[0].hour[18].feelslike_c,
-      wind:          (data.forecast.forecastday[0].hour[18].wind_kph / 3.6).toFixed(1),
-      wind_dir:       data.forecast.forecastday[0].hour[18].wind_dir,
-      humidity:       data.forecast.forecastday[0].hour[18].humidity,
-      chance_of_rain: data.forecast.forecastday[0].hour[18].chance_of_rain,
-    },
-    {
-      temp:           data.forecast.forecastday[0].hour[21].temp_c,
-      fiils_like:     data.forecast.forecastday[0].hour[21].feelslike_c,
-      wind:          (data.forecast.forecastday[0].hour[21].wind_kph / 3.6).toFixed(1),
-      wind_dir:       data.forecast.forecastday[0].hour[21].wind_dir,
-      humidity:       data.forecast.forecastday[0].hour[21].humidity,
-      chance_of_rain: data.forecast.forecastday[0].hour[21].chance_of_rain,
-    },
-  ]
+  const $slideone   = document.querySelector('.one')
+  const $slidetwo   = document.querySelector('.two')
+  const $slidethree = document.querySelector('.three')
 
-  let datePatch = new Date(partialDayProperties.day_of_the_week.split('-').join(', '));
+  function app(data, day) { 
+    const partialDayProperties = {
+      day_of_the_week:  data.forecast.forecastday[day].date,
+      max_temp:         data.forecast.forecastday[day].day.maxtemp_c,
+      min_temp:         data.forecast.forecastday[day].day.mintemp_c,
+    }
+    const astroProperties = {
+      sun_rise:         data.forecast.forecastday[day].astro.sunrise,
+      sun_set:          data.forecast.forecastday[day].astro.sunset,
+      moon_rise:        data.forecast.forecastday[day].astro.moonrise,
+      moon_set:         data.forecast.forecastday[day].astro.moonset,
+      moon_phase:       data.forecast.forecastday[day].astro.moon_phase
+    }
+    const hourProperties = [
+      {
+        temp:           data.forecast.forecastday[day].hour[0].temp_c,
+        fiils_like:     data.forecast.forecastday[day].hour[0].feelslike_c,
+        wind:          (data.forecast.forecastday[day].hour[0].wind_kph / 3.6).toFixed(1),
+        wind_dir:       data.forecast.forecastday[day].hour[0].wind_dir,
+        humidity:       data.forecast.forecastday[day].hour[0].humidity,
+        chance_of_rain: data.forecast.forecastday[day].hour[0].chance_of_rain,
+      },
+      {
+        temp:           data.forecast.forecastday[day].hour[3].temp_c,
+        fiils_like:     data.forecast.forecastday[day].hour[3].feelslike_c,
+        wind:          (data.forecast.forecastday[day].hour[3].wind_kph / 3.6).toFixed(1),
+        wind_dir:       data.forecast.forecastday[day].hour[3].wind_dir,
+        humidity:       data.forecast.forecastday[day].hour[3].humidity,
+        chance_of_rain: data.forecast.forecastday[day].hour[3].chance_of_rain,
+      },
+      {
+        temp:           data.forecast.forecastday[day].hour[6].temp_c,
+        fiils_like:     data.forecast.forecastday[day].hour[6].feelslike_c,
+        wind:          (data.forecast.forecastday[day].hour[6].wind_kph / 3.6).toFixed(1),
+        wind_dir:       data.forecast.forecastday[day].hour[6].wind_dir,
+        humidity:       data.forecast.forecastday[day].hour[6].humidity,
+        chance_of_rain: data.forecast.forecastday[day].hour[6].chance_of_rain,
+      },
+      {
+        temp:           data.forecast.forecastday[day].hour[9].temp_c,
+        fiils_like:     data.forecast.forecastday[day].hour[9].feelslike_c,
+        wind:          (data.forecast.forecastday[day].hour[9].wind_kph / 3.6).toFixed(1),
+        wind_dir:       data.forecast.forecastday[day].hour[9].wind_dir,
+        humidity:       data.forecast.forecastday[day].hour[9].humidity,
+        chance_of_rain: data.forecast.forecastday[day].hour[9].chance_of_rain,
+      },
+      {
+        temp:           data.forecast.forecastday[day].hour[12].temp_c,
+        fiils_like:     data.forecast.forecastday[day].hour[12].feelslike_c,
+        wind:          (data.forecast.forecastday[day].hour[12].wind_kph / 3.6).toFixed(1),
+        wind_dir:       data.forecast.forecastday[day].hour[12].wind_dir,
+        humidity:       data.forecast.forecastday[day].hour[12].humidity,
+        chance_of_rain: data.forecast.forecastday[day].hour[12].chance_of_rain,
+      },
+      {
+        temp:           data.forecast.forecastday[day].hour[15].temp_c,
+        fiils_like:     data.forecast.forecastday[day].hour[15].feelslike_c,
+        wind:          (data.forecast.forecastday[day].hour[15].wind_kph / 3.6).toFixed(1),
+        wind_dir:       data.forecast.forecastday[day].hour[15].wind_dir,
+        humidity:       data.forecast.forecastday[day].hour[15].humidity,
+        chance_of_rain: data.forecast.forecastday[day].hour[15].chance_of_rain,
+      },
+      {
+        temp:           data.forecast.forecastday[day].hour[18].temp_c,
+        fiils_like:     data.forecast.forecastday[day].hour[18].feelslike_c,
+        wind:          (data.forecast.forecastday[day].hour[18].wind_kph / 3.6).toFixed(1),
+        wind_dir:       data.forecast.forecastday[day].hour[18].wind_dir,
+        humidity:       data.forecast.forecastday[day].hour[18].humidity,
+        chance_of_rain: data.forecast.forecastday[day].hour[18].chance_of_rain,
+      },
+      {
+        temp:           data.forecast.forecastday[day].hour[21].temp_c,
+        fiils_like:     data.forecast.forecastday[day].hour[21].feelslike_c,
+        wind:          (data.forecast.forecastday[day].hour[21].wind_kph / 3.6).toFixed(1),
+        wind_dir:       data.forecast.forecastday[day].hour[21].wind_dir,
+        humidity:       data.forecast.forecastday[day].hour[21].humidity,
+        chance_of_rain: data.forecast.forecastday[day].hour[21].chance_of_rain,
+      },
+    ]
   
-  function getWeekDay(date) {
-    const days = [
-      'Воскресенье', 
-      'Понедельник', 
-      'Вторник', 
-      'Среда', 
-      'Четверг', 
-      'Пятница', 
-      'Суббота'];
-    return days[date.getDay()];
-  }
-  
-  const $forecast__block = document.querySelector('.forecast__block');
-  const $app = 
+    let datePatch = new Date(partialDayProperties.day_of_the_week.split('-').join(', '));
+    
+    function getWeekDay(date) {
+      const days = [
+        'Воскресенье', 
+        'Понедельник', 
+        'Вторник', 
+        'Среда', 
+        'Четверг', 
+        'Пятница', 
+        'Суббота'];
+      return days[date.getDay()];
+    }
+
+    let result = 
       `
       <div class="forecast flex__centring">
         <div class="forecast__leftMenu">
@@ -217,7 +221,15 @@ export function renderFullForecast(data) {
           </table>
         <div>
       </div>  
-      `
-  $forecast__block.insertAdjacentHTML('beforeend', $app);
-  return $app;
-}
+      `;
+    return result;
+  } 
+
+    const one   = app(data, 0);
+    const two   = app(data, 1);
+    const three = app(data, 2);
+    
+    $slideone.insertAdjacentHTML('beforeend', one)
+    $slidetwo.insertAdjacentHTML('beforeend', two)
+    $slidethree.insertAdjacentHTML('beforeend', three)
+  }
