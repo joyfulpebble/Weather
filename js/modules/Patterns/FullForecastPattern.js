@@ -82,7 +82,7 @@ export function renderFullForecast(data) {
         chance_of_rain: data.forecast.forecastday[day].hour[21].chance_of_rain,
       },
     ]
-  
+
     let datePatch = new Date(partialDayProperties.day_of_the_week.split('-').join(', '));
     
     function getWeekDay(date) {
@@ -228,8 +228,8 @@ export function renderFullForecast(data) {
     const one   = app(data, 0);
     const two   = app(data, 1);
     const three = app(data, 2);
-    
-    $slideone.insertAdjacentHTML('beforeend', one)
-    $slidetwo.insertAdjacentHTML('beforeend', two)
-    $slidethree.insertAdjacentHTML('beforeend', three)
+
+    $slideone.innerHTML   = one
+    $slidetwo.innerHTML   = two
+    $slidethree.innerHTML = three
   }
